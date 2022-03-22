@@ -1,30 +1,27 @@
 # Python
 
 PEP - Python Enhancement Proposal
-Dokumenty vydávané a udržvané komunitou vývojářů jazyka, které poisují nějaké doporučované
-konvence a postupy o tom, jak psát udržitelný kód v pythonu.
-[Najdete zde](https://peps.python.org/pep-0008/)
+Documents written by community of python language developers describing recommended conventions about writing
+maintainable python code. 
+[Source here](https://peps.python.org/pep-0008/)
 
-## Styl pojmenování
+## Naming style
 
 ### snake_case
-Malá písmena, slova oddělujeme podtržítkem.
-Použití:
-funkce, proměnné, metody u třídy, názvy tzv. module (module = jeden soubor s příponou .py)
-V Diribetu také používáme pro názvy package, které by podle oficálních doporučení neměly slova oddělovat.
-
+Lowercase letters, words are separated by underscore.
+Usage: functions, variables, methods, names of modules (module = file with `.py` extension)
+Special in Diribet - also used for package names even though official recommendation is something like `mypackage`
+instead of `my_package`.
 
 ### PascalCase
-Každé slovo začíná velkým písmenem, slova se neoddělují. Pužíváme pro názvy tříd.
+Each word is capitalized, words are not separated. Use when naming classes.
 
 ### SCREAMING_SNAKE_CASE
-Používáme výhradně pro proměnné, které zamýšlíme používat jako konstanty - tj. hodnota přiřazená této proměnné se nemění.
-Python nám nedává k dispozici jednoduchý způsob jak "zmrazit" proměnnou, tak abychom ji nemohli podruhé přiřadit hodnotu,
-i když toho lze dosáhnout, mnohem častěji se jednoduše používá pojmenování velkými písmeny, aby bylo jasné,
-že MY_CONSTANT se nebude měnit. Konstanty jsou většinou definovány pro celý package či nějakou scope, kde dávají smysl v
-samostatném souboru.
+Use exclusively for variables that you intend to use as constants. That is value assigned to this variable
+does not change. Python doesn't provide an easy way to "freeze" a variable, it is possible though, usually we rely on
+the naming style. Constants are usually declared in a specific file named 'constants'.
 
-## Struktura repozitáře
+## Repository structure
 ```
 .
 +-- .gitignore
@@ -40,24 +37,23 @@ samostatném souboru.
 +-- env
 ```
 
-Soubor requirements.txt obsahuje informace o použitých externích knihovnách a jejich verzích.
-Specifická verze `some_package==1.20.1`
-`some_package>=1.0,<=2.0`
+`requirements.txt` file contains information about 3rd party libraries ans their versions used in the project.
+Specific version: `some_package==1.20.1`
+Range: `some_package>=1.0,<=2.0`
 
-Používáme virtual environment a tyhle složky pojmenujeme často `env`
-[Více info zde](https://docs.python.org/3/library/venv.html)
+We use virtual environments for each project and they're often just called `env`
+[More information here](https://docs.python.org/3/library/venv.html)
 
-Data k datovým analýzám dáváme na Google drive. Data typu "vzor" nebo data pro testy softwaru naopak do gitu patří. 
-
-
-## Importy
-To první, co v souboru je. Nejdřív importy standardních knihoven, pak instalované knihovny třetí strany,
-pak lokální moduly a package.
+Data for analysis is shared on Google drive.
+Data that represent a sample (typically sample of a json request for web servers) or data for testing the software
+are included in the repository. 
 
 
+## Imports
+At the top of the file, first standard library imports, then 3rd party packages and then your local modules.
 
-## Různé
-Explicitni check pro `None`, u proměnných, co nejsou boolean.
+## Miscellaneous 
+Explicit check for `None` for variables that are not boolean.
 `if my_variable is not None:` vs `if not my_variable`
 
 
