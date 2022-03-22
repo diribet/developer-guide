@@ -1,7 +1,7 @@
 # Python
 
 PEP - Python Enhancement Proposal
-Dokumenty vydávan0 a udržvan0 komunitou vývojářů jazyka, které poisují nějaké doporučované
+Dokumenty vydávané a udržvané komunitou vývojářů jazyka, které poisují nějaké doporučované
 konvence a postupy o tom, jak psát udržitelný kód v pythonu.
 [Najdete zde](https://peps.python.org/pep-0008/)
 
