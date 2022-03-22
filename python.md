@@ -34,8 +34,8 @@ samostatném souboru.
 +-- tests
 |	+-- unit
 |	|   +-- main_test.py
-+-- data
-|   +-- customer_data.json
++-- samples
+|   +-- sample_request.json
 +-- requirements.txt
 +-- env
 ```
@@ -46,6 +46,8 @@ Specifická verze `some_package==1.20.1`
 
 Používáme virtual environment a tyhle složky pojmenujeme často `env`
 [Více info zde](https://docs.python.org/3/library/venv.html)
+
+Data k datovým analýzám dáváme na Google drive. Data typu "vzor" nebo data pro testy softwaru naopak do gitu patří. 
 
 
 ## Importy
