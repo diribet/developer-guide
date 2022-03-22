@@ -15,7 +15,7 @@ Avoid surprising or dangerous constructs.
 
 Avoid constructs that an average programmer would not understand at first glance.
 
-As always, common sense should prevail. Goal is consistent and readable code, our rules are not a dogma.
+As always, common sense should prevail. The goal is consistent and readable code, our rules are not a dogma.
 
 ## Formatting
 
@@ -62,7 +62,7 @@ The pattern-matching engine in our brains relies a great deal on these naming ru
 Naming rules are pretty arbitrary, but we feel that consistency is more important than individual 
 preferences in this area, so regardless of whether you find them sensible or not, the rules are the rules.
 
-Here are the general naming rules that applies to all languages. 
+Here are the general naming rules that apply to all languages. 
 In addition, each language has its own set of naming rules described in language-specific guides.  
 
 ### General naming rules
@@ -80,10 +80,10 @@ Note that certain universally-known abbreviations are OK, such as `i` for an ite
 
 ### Language
 
-Code should be written in English language. 
+The code should be written in the English language. 
 
-Some legacy parts of the codebase are written in Czech language. 
-These parts of code should be rewritten in English when we will touch them. 
+Some legacy parts of the codebase are written in the Czech language. 
+These parts of the code should be rewritten in English when we will touch them. 
 The code should continuously evolve to be entirely written in English.
 
 ### Comments
@@ -91,19 +91,19 @@ The code should continuously evolve to be entirely written in English.
 Do not state the obvious. 
 In particular, don't literally describe what code does, unless the behavior is non-obvious to a reader 
 who understands the language well. 
-Instead, provide higher level comments that describe why the code does what it does, or make the code self describing.
-Wrapping code in properly named function is better than writing inline comments.
+Instead, provide higher-level comments that describe why the code does what it does, or make the code self-describing.
+Wrapping code in a properly named function is better than writing inline comments.
 
 
 ### TODO and FIXME comments
 
-`TODO`s can be used for code that is a short-term solution or good-enough but not perfect. 
+`TODO`s can be used for code that is a short-term solution or good enough but not perfect. 
 Also, they can mark code that should be changed at a specific time or event (e.g. Remove this after we upgrade library xxx to version yyy.)
 
 `FIXME`s can be used for code that should be changed / fixed as soon as possible. 
 They should be used only on feature branches and resolved before merging to the `main` branch.
 
-Both `TODO` and `FIXME` should contain date when they were written and name of the person who created them in this format:
+Both `TODO` and `FIXME` should contain the date when they were written and the name of the person who created them in this format:
 
 ```
 // TODO: 2022/03/22 - vlasta: some comment
