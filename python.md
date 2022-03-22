@@ -1,6 +1,6 @@
 # Python
 
-PEP - Python Enhancement Proposal
+PEP - Python Enhancement Proposal<br>
 Documents written by community of python language developers describing recommended conventions about writing
 maintainable python code. 
 [Source here](https://peps.python.org/pep-0008/)
@@ -17,8 +17,8 @@ instead of `my_package`.
 Each word is capitalized, words are not separated. Use when naming classes.
 
 ### SCREAMING_SNAKE_CASE
-Use exclusively for variables that you intend to use as constants. That is value assigned to this variable
-does not change. Python doesn't provide an easy way to "freeze" a variable, it is possible though, usually we rely on
+Use exclusively for variables that are intended to be constants. The value assigned to this variable
+does not change. Python doesn't provide an easy way to "freeze" a variable, it is possible though usually we rely on
 the naming style. Constants are usually declared in a specific file named 'constants'.
 
 ## Repository structure
@@ -41,7 +41,7 @@ the naming style. Constants are usually declared in a specific file named 'const
 Specific version: `some_package==1.20.1`
 Range: `some_package>=1.0,<=2.0`
 
-We use virtual environments for each project and they're often just called `env`
+We use virtual environments for each project, and they're often just called `env`
 [More information here](https://docs.python.org/3/library/venv.html)
 
 Data for analysis is shared on Google drive.
