@@ -115,3 +115,25 @@ You can use this Live Template in JetBrains IDEs:
 // TODO: $date$ - $user$:
 ```
 
+## General principles
+
+### DRY
+
+Don't repeat yourself. [See Wiki](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+
+### KISS
+
+Keep it short and simple. [See Wiki](https://en.wikipedia.org/wiki/KISS_principle)
+
+### Single-responsibility principle
+
+Every function should do one thing and only one thing. [See Wiki](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+
+### Keep functions and classes small
+
+When the function or class become too long, it is probably violating the Single-responsibility principle.
+You should try to break the code into smaller logical blocks.
+
+### Premature optimization
+
+Premature optimization is the root of all evil. Do not optimize something before you know it is necessary.
