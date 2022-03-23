@@ -131,7 +131,7 @@ Every function should do one thing and only one thing. [See Wiki](https://en.wik
 
 ### Keep functions and classes small
 
-When the function or class become too long, it is probably violating the Single-responsibility principle.
+When the function or class becomes too long, it is probably violating the Single-responsibility principle.
 You should try to break the code into smaller logical blocks.
 
 ### Premature optimization
