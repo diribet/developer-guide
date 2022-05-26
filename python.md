@@ -11,7 +11,7 @@ maintainable python code.
     - repository structure
     - virtual environments
     - dependencies
-4. Jupyter notebooks 
+4. [Jupyter notebooks](#jupyter-notebooks) 
 5. [Naming style](#naming-style) 
 
 
