@@ -23,7 +23,7 @@ Custom installation
 - python test suite
 - create shortcuts for applications
 - debugging symbols and debug binaries
-- ! customize install location
+- ! customize install location<br>
   choose something simple like C:\python, C:\python310, C:\pythons\py37, C:\pythons\py310
 
 If you install python into a folder at `C:\python`, you will have to put this path into the Path environment variable.
@@ -35,7 +35,7 @@ executes your python scripts (`.py` files).
 
 The python installer offers to modify the Path variable for you. If you want to use multiple versions of python,
 you can rename the installation directory and the `.exe` file to some appropriate name e.g. `python310.exe`,
-`python38.exe`. We use (or try to do so) one version and that's python 3.8 whose support ends in 2024.
+`python38.exe`. We use (or try to do so) one version and that's python 3.8 that is supported until 2024.
 
 ## Using pip
 pip = package installer for python.
