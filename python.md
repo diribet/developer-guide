@@ -72,8 +72,8 @@ But it's not necessary to run python programs.
 ```
 
 `requirements.txt` file contains information about 3rd party libraries and their versions used in the project.
-Specific version: `some_package==1.20.1`
-Range: `some_package>=1.0,<=2.0`
+* Specific version: `some_package==1.20.1`
+* Range: `some_package>=1.0,<=2.0`
 
 ### Virtual environment
 Part of the python standard library is a package called `venv`: [docs](https://docs.python.org/3/library/venv.html)
@@ -118,9 +118,10 @@ You can specify version of the dependency as:
 * Specific version: `some_package==1.20.1`
 * Range: `some_package>=1.0,<=2.0`
 
-To install all requirements at once: `python -m pip install -r requirements.txt`
-`python -m pip` run pip as a script with the specific version that python points to (PATH...)
-`install` is the command supplied to `pip`, `-r` flag should be followed by filename where dependencies are listed, 
+To install all requirements at once: `python -m pip install -r requirements.txt`<br>
+explanation:
+- `python -m pip` run pip as a script with the specific version that python points to (PATH...)
+- `install` is the command supplied to `pip`, `-r` flag should be followed by filename where dependencies are listed, 
 it means install everything from this file. 
 
 *todo* ? wheels - packages that use C-extensions are pre-compiled for specific architecture 
