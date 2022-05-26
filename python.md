@@ -9,7 +9,8 @@ maintainable python code.
 2. [Using `pip`](#using-pip) - installing 3rd party packages
 3. [Python project setup](#project-setup)
     - repository structure
-    - virtual environments & dependencies
+    - virtual environments
+    - dependencies
 4. Jupyter notebooks 
 5. [Naming style](#naming-style) 
 
@@ -28,15 +29,13 @@ Custom installation
 If you install python into a folder at `C:\python`, you will have to put this path into the Path environment variable.
 Path is just a list of paths to executable files you want to run easily without having to specify the full path to
 the executable that actually starts your application. For example, you can open up the command prompt and type 
-`notepad.exe` to run the notepad program because by default `notepad.exe` (stored at `C:\Windows` for example)
+`notepad.exe` to run the notepad program because by default `notepad.exe` is stored at `C:\Windows` (for example)
 which is included in the Path environment variable. Notepad.exe runs a GUI program, python.exe runs a CLI program, that 
 executes your python scripts (`.py` files).
 
 The python installer offers to modify the Path variable for you. If you want to use multiple versions of python,
 you can rename the installation directory and the `.exe` file to some appropriate name e.g. `python310.exe`,
-`python38.exe`.
-
-Note: Everytime the environment variables are changed, you need to open a new cmd prompt to see the changes.
+`python38.exe`. We use (or try to do so) one version and that's python 3.8 whose support ends in 2024.
 
 ## Using pip
 pip = package installer for python.
@@ -45,9 +44,14 @@ Example usage:
 - check that numpy is installed, show information about it: `python -m pip show numpy`
 - remove numpy: `python -m pip uninstall numpy`
 
-`-m` flag = run standard library module as a script. This syntax may seem more verbose, but it's clearly visible which python
-interpreter is used. So if I had a folder `C:\python310` (added to Path) containing `python310.exe`,
+`-m` flag = run standard library module as a script. This syntax may seem more verbose, but it's clearly visible which
+python interpreter is used. So if I had a folder `C:\python310` (added to Path) containing `python310.exe`,
 I could call `python310 -m pip [...]`.
+
+The official documentation of pip can be found [here](https://pip.pypa.io/en/stable/).
+Note on unix vs windows syntax used in the official docs: In Windows, you have the option to install something called
+python launcher which is a tool used to manage different version of python on one computer and calling pip directly.
+But it's not necessary to run python programs.
 
 ## Project setup
 
@@ -108,10 +112,41 @@ in `pyenv.cfg`.
 
 Note: To see what is in Path in cmd: `echo %PATH%`.
 
+### Dependencies
+3rd party packages used in the project and their versions are specified in the `requirements.txt` file.
+You can specify version of the dependency as:
+* Specific version: `some_package==1.20.1`
+* Range: `some_package>=1.0,<=2.0`
+
+To install all requirements at once: `python -m pip install -r requirements.txt`
+`python -m pip` run pip as a script with the specific version that python points to (PATH...)
+`install` is the command supplied to `pip`, `-r` flag should be followed by filename where dependencies are listed, 
+it means install everything from this file. 
+
+*todo* ? wheels - packages that use C-extensions are pre-compiled for specific architecture 
+
 #### Note on IntelliJ
 File -> Project Structure -> Project Settings
 This is where you configure the SDK (general term meaning Software Development Kit) this is either a virtual environment 
-or the global interpreter. 
+or the global interpreter. For some reason it works better to create environment from cmd and then add it to idea
+as an existing SDK - if you use more python versions with something like `python310.exe`.
+
+## Jupyter Notebooks
+Jupyter notebook has the extension `.ipynb` and the file contains both code and other elements (charts, latex math symbols,
+markdown formatted text, etc...)
+Kernel is some language's interpreter that runs the human written code in the notebook.
+For python, we have ipython kernel - installed automatically with the python package `jupyter`.
+
+Jupyter can be listed in `requirements.txt` and when the server is started from inside the environment, a kernel that is
+available only in this environment is created. The Jupyter project has more frontends available for notebook management,
+or we can use the (paid) plugin in intellij.
+
+Other option is to use the static directory on disk where jupyter can store kernels that should be globally accessible.<br>
+Example - I have python (3.8) and python310 (3.10) installed, and I want to add python 3.10 to available kernels.
+* `python310 -m pip install jupyter` - install jupyter in the 'global environment' that is the 3.10 python
+* `python310 -m ipykernel install --name "python310" --user` - ipykernel is a tool that comes with jupyter for managing python kernels
+* `python -m jupyter kernelspec list` - output of this will be the *static* list of kernels, meaning output would be the same 
+if called with `python310`.
 
 ## Naming style
 
