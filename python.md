@@ -71,10 +71,6 @@ But it's not necessary to run python programs.
 +-- env
 ```
 
-`requirements.txt` file contains information about 3rd party libraries and their versions used in the project.
-* Specific version: `some_package==1.20.1`
-* Range: `some_package>=1.0,<=2.0`
-
 ### Virtual environment
 Part of the python standard library is a package called `venv`: [docs](https://docs.python.org/3/library/venv.html)
 <br>
